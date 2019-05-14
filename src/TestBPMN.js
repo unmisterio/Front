@@ -4,10 +4,13 @@ import logo from './logo.svg';
 export default class TestBPMN extends React.Component {
     constructor(props){
         super(props);
+        this.environment ={
+            processEngineURL:"http://localhost:8080/engine-rest",
+            processDeployKey:"Process_13052019",
+        }
         this.state = {
             loading:false,
-            result:{},
-            url:"http://localhost:8080/engine-rest",
+            processInstance:{},
             processID:"",
             taskID:"",
             tasks:[{
@@ -27,21 +30,21 @@ export default class TestBPMN extends React.Component {
     instanceProcess(){
 
         //1. Set the URL
-        let instanceURL = "http://localhost:8080/engine-rest/process-definition/key/Process_13052019/start"
+        let instanceURL = this.environment.processEngineURL+"/process-definition/key/"+this.environment.processDeployKey+"/start";
         //2. set the request body
         let thebody ={
             "variables":{
-                "amount":{
-                "value":2500,
-                "type":"Integer"
+                amount:{
+                value:2500,
+                type:"Integer"
                 },
-                "item":{
-                "value":"Colores prisma",
-                    "type":"String"
+                item:{
+                    value:"receptor Bluetooth",
+                    type:"String"
                 },
-                "VB":{
-                "value":"True",
-                    "type":"String"
+                VB:{
+                    value:"True",
+                    type:"String"
                 }
             }
         };
@@ -66,7 +69,7 @@ export default class TestBPMN extends React.Component {
         } )
         .then(res =>{
             this.setState({         //update the local variables
-                result: res,
+                processInstance: res,
                 loading:false 
             });
             console.log(res);
@@ -80,7 +83,7 @@ export default class TestBPMN extends React.Component {
     }
     //Calls the Camunda API with the process ID on the URL 
     findTask(){
-        let taskURL = "http://localhost:8080/engine-rest/task?processInstanceId="+this.state.processID;
+        let taskURL = this.environment.processEngineURL+"/task?processInstanceId="+this.state.processID;
         let data ={
             method:'GET',
             headers:{
@@ -95,7 +98,7 @@ export default class TestBPMN extends React.Component {
                 console.log(res);
                 return res.json(); //parsing to JSON
             } 
-        } )
+        })
         .then(res =>{               // Update the local variables with the response
             this.setState({
                 tasks: res,
@@ -107,20 +110,20 @@ export default class TestBPMN extends React.Component {
         });
     }
     executeTask(){
-        let taskURL = "http://localhost:8080/engine-rest/task/"+this.state.taskID+"/complete";
+        let taskURL = this.environment.processEngineURL+"/task/"+this.state.taskID+"/complete";
         let thebody ={
             "variables":{
-                "amount":{
-                "value":9000,
-                "type":"Integer"
+                amount:{
+                value:10500,
+                type:"Integer"
                 },
-                "item":{
-                "value":"Avion 727",
-                    "type":"String"
+                item:{
+                    value:"receptor Bluetooth V 5.0 ",
+                    type:"String"
                 },
-                "VB":{
-                "value":"True",
-                    "type":"String"
+                VB:{
+                    value:"True",
+                    type:"String"
                 }
             }
         };
@@ -158,7 +161,7 @@ export default class TestBPMN extends React.Component {
           </button>
           <br></br>
            <br></br>
-          El ID de instancia de proceso creado es :<br></br> {this.state.result.id}
+          El ID de instancia de proceso creado es :<br></br> {this.state.processInstance.id}
           <br></br>
            <br></br>
             Buscar tarea de una instancia de proceso:
