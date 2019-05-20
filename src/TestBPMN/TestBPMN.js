@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 
 export default class TestBPMN extends React.Component {
     constructor(props){
@@ -150,7 +150,7 @@ export default class TestBPMN extends React.Component {
    
   render(){
     return (
-        <div>
+        <div className="App">
             <div style={{ display: this.state.loading ? 'block' : 'none' }}>
             <h2>Consultando</h2>
             <img src={logo} className="App-logo" alt="logo" />
