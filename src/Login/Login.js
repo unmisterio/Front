@@ -1,12 +1,13 @@
 import React from 'react';
 import { Redirect  } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
+import { Button } from 'react-bootstrap';
 
 export default class Login extends React.Component {
-    
+
     constructor(props){
         super(props);
-        this.redirectTo=""; 
+        this.redirectTo="";
         this.state={
             clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
             isLogued:false,
@@ -98,9 +99,10 @@ export default class Login extends React.Component {
                     />
                 </div>
                 <div style={{ display: !this.state.isLogued ? 'none' : 'block' }}>
-                    Bienvenido {this.state.user.firstName} {this.state.user.lastName} - - 
-                    <a href="#/" onClick={this.logOut} > logOut</a>
-                    {/* este div debe mostrar que el usuario esta logueado usando su nombre */}
+                <br/>
+                    <h2>Bienvenido <br/>{this.state.user.firstName} {this.state.user.lastName}</h2>
+                    <br/>
+                    <Button href="/" onClick={this.logOut} variant="danger" > Log Out</Button>
                 </div>
             </div>
         );

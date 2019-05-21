@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../logo.svg';
+import Sidebar from "../Home/components/Sidebar";
+import Sidebar2 from "../Home/components/Sidebar2";
 
 export default class TestBPMN extends React.Component {
     constructor(props){
@@ -56,32 +58,32 @@ export default class TestBPMN extends React.Component {
                 'Content-Type': 'application/json'
             }
         }
-        // Optional: Make sure the user knows the app is waiting data from a server 
+        // Optional: Make sure the user knows the app is waiting data from a server
         this.setState({loading:true});
 
-        //4. Api call 
+        //4. Api call
         fetch(instanceURL,data)
         .then(res => {          //5.  handle a promise f the response
             if(res.ok){
                 console.log(res);
                 return res.json();  //5.1 parse the response if there is a response (review Camunda Docs)
-            } 
+            }
         } )
         .then(res =>{
             this.setState({         //update the local variables
                 processInstance: res,
-                loading:false 
+                loading:false
             });
             console.log(res);
-        }).catch( error =>{         // handle error 
+        }).catch( error =>{         // handle error
             console.log("hubo un error al instanciar el proceso:"+ error.message);
         });
     }
-    
+
     setField (e) {
         this.setState({[e.target.name]: e.target.value})
     }
-    //Calls the Camunda API with the process ID on the URL 
+    //Calls the Camunda API with the process ID on the URL
     findTask(){
         let taskURL = this.environment.processEngineURL+"/task?processInstanceId="+this.state.processID;
         let data ={
@@ -97,7 +99,7 @@ export default class TestBPMN extends React.Component {
             if(res.ok){
                 console.log(res);
                 return res.json(); //parsing to JSON
-            } 
+            }
         })
         .then(res =>{               // Update the local variables with the response
             this.setState({
@@ -142,25 +144,29 @@ export default class TestBPMN extends React.Component {
                 this.setState({
                     loading:false
                 });
-            } 
-        }).catch( error =>{ 
+            }
+        }).catch( error =>{
             console.log("hubo un error al terminar la tarea:"+ error.message);
         });
     }
-   
+
   render(){
     return (
+
         <div className="App">
+
+          <Sidebar />
+  
+          <br/>
             <div style={{ display: this.state.loading ? 'block' : 'none' }}>
             <h2>Consultando</h2>
             <img src={logo} className="App-logo" alt="logo" />
             </div>
-            
+
           <button onClick={this.instanceProcess}>
             Lanzar nueva instancia
           </button>
           <br></br>
-           <br></br>
           El ID de instancia de proceso creado es :<br></br> {this.state.processInstance.id}
           <br></br>
            <br></br>
@@ -172,7 +178,7 @@ export default class TestBPMN extends React.Component {
                Buscar Tarea
            </button>
            <br></br>
-           El proceso se encuentra pendiente en la tarea: 
+           El proceso se encuentra pendiente en la tarea:
            <br></br>
            Nombre: {this.state.tasks[0].name}
            <br></br>
@@ -190,8 +196,10 @@ export default class TestBPMN extends React.Component {
             <button onClick={this.executeTask} >
                Terminar Tarea
            </button>
+           <Sidebar2 />
+
+
         </div>
       );
-  } 
+  }
 }
-
