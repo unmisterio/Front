@@ -10,12 +10,8 @@ import CrearConvocatoria from '../CrearConvocatoria/CrearConvocatoria';
 export default class App extends React.Component {
   constructor(props){
     super(props);
-    this.componentDidMount();
   }
-  
-  componentDidMount () {
-   
-  }
+
   render(){
     return (
       <div className="App">
@@ -26,12 +22,13 @@ export default class App extends React.Component {
             PROCESO DE MOVILIDAD V0.0.0.1
           </h1>
         </header>
-
+      <div>
+        <Login></Login>
+      </div>
       <Router>
         <div>
         </div>
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
           <Route path="/test" component={TestBPMN} />
           <Route path="/crear" component={CrearConvocatoria} />
       </Router>
