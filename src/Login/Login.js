@@ -1,18 +1,64 @@
 import React from 'react';
 import { Redirect  } from "react-router-dom";
-import meme from './meme-papa-de-timmy.jpg';
 import GoogleLogin from 'react-google-login';
-import ReactDOM from 'react-dom';
 
 export default class Login extends React.Component {
     
     constructor(props){
         super(props);
-        this.redirectTo="";      
+        this.redirectTo=""; 
+        this.state={
+            clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
+            isLogued:false,
+            user:{
+                firstName:"",
+                lastName:"",
+                email:"",
+                imageURL:""
+            }
+        }
+        this.responseGoogle = this.responseGoogle.bind(this);
+        this.onSignIn = this.onSignIn.bind(this);
+        this.logOut = this.logOut.bind(this);
+
+        //check if the user is logged
+        this.checkLogued();
     }
-    
+
+    checkLogued(){
+        let sessionData = JSON.parse(sessionStorage.getItem("movilidadUser"));
+        if(sessionData != null){
+            this.state= {
+                clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
+                isLogued:true,
+                user:sessionData
+            }
+        }
+    }
+
+    logOut(){
+        sessionStorage.clear();
+        this.setState({
+            isLogued:false
+        })
+    }
+
     responseGoogle(res){
         console.log(res);
+        this.setState({
+            isLogued:true,
+            user:{
+                firstName:res.profileObj.givenName,
+                lastName:res.profileObj.familyName,
+                email:res.profileObj.email,
+                imageURL:res.profileObj.imageUrl
+            }
+        });
+        sessionStorage.setItem("movilidadUser",JSON.stringify(this.state.user));
+    }
+
+    responseGoogleErr(err){
+        console.error(err);
     }
     setRedirect(path){
         this.redirectTo=path;
@@ -42,15 +88,20 @@ export default class Login extends React.Component {
         }
         return(
             <div>
-            <h2>Login Component !!!</h2>
-            <GoogleLogin
-              clientId="331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com"
-              buttonText="Login"
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-              cookiePolicy={'single_host_origin'}
-            />
-            
+                <div style={{ display: this.state.isLogued ? 'none' : 'block' }}>
+                    <GoogleLogin
+                    clientId={this.state.clientId}
+                    buttonText="Login"
+                    onSuccess={this.responseGoogle}
+                    onFailure={this.responseGoogleErr}
+                    cookiePolicy={'single_host_origin'}
+                    />
+                </div>
+                <div style={{ display: !this.state.isLogued ? 'none' : 'block' }}>
+                    Bienvenido {this.state.user.firstName} {this.state.user.lastName} - - 
+                    <a href="#/" onClick={this.logOut} > logOut</a>
+                    {/* este div debe mostrar que el usuario esta logueado usando su nombre */}
+                </div>
             </div>
         );
     }
