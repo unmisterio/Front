@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Guia básica del FRONT
+Este es el repositorio oficial del FRONTEND del proyecto de movilidad academica, desarrollado para la materia de ingenieria de software II
+## Requisitos
 
-## Available Scripts
+Para poder ver y aportar al desarrollo del proyecto  es necesario tener instalado (Anexo comandos para ver la version y si esta instalado en el ordenador):
+* NodeJS &rarr; node  -v
+* Express &rarr; npm  -v
+* Git &rarr;  git  --version
+* Cuenta en Github
+* React
+* Editor de texto (Recomendados Visual Studio Code,Atom o Sublime Text)
+* Camunda Modeler (Opcional)
+* Camunda BPM (Opcional)
+* Tomcat (Opcional)
 
-In the project directory, you can run:
+Tener en cuenta que para instalar Tomcat se requiere tener instaladas algunas dependencias de Java.
 
-### `npm start`
+## Clonar el proyecto y ejecutarlo
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Copiar la dirección a clonar del repositorio Front de la rama master
+2. Ejecutar el comando 'git clone <dirección>' para obtener el proyecto de forma local
+3. Dentro de la carpeta  creada con el anterior comando llamada Front ejecutar el comando 'npm install' para instalar dependencias faltantes
+4. Ahi mismo ejecutar comando 'sudo npm start' e insertar la contraseña de usuario de su máquina
+5. Visualizar la web en el navegador en la dirección 'localhost'
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**Nota:** Se cambio el puerto predeterminado de react que es el 3000 al puerto 80 por un inconveniente que hubo con el login y al ser un puerto inferior a 1024 pide permisos de autenticación
 
-### `npm test`
+## Modificar el proyecto y publicar cambios en el repositorio de Github
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Abrir el folder del proyecto es decir el fichero llamado 'Front'con el editor de preferencia y hacer las modificaciones correspondientes
+2. Ejecutar el comando 'git status' para ver los cambios que ha realizado
+3. Ejecutar el comando 'git add .'  para mandar las modificaciones a la staging area
+4. Revisar que se encuentre en la rama develop, para eso ejecutar el comando 'git checkout'. En caso de que no sea asi cambiar a la rama develop ejecutando 'git checkout develop'
+5. Hacer commit a los cambios con el comando 'git commit -m "Texto descriptivo del cambio realizado" '
+6. Hacer pull al proyecto usando el comando 'git pull' para asegurarse tener la última version publicada (Puede generar conflictos)
+7. Hacer push para publicar los cambios en los repositorios de github con el comando 'git push'. Tener en cuenta que para realizar esta acción hay que loguearse con los credenciales de la cuenta de github
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Nota:** A menos que este totalmente seguro de las modificaciones que realizo es recomendable solamente hacer push a la rama develop.
