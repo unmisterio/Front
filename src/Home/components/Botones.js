@@ -26,7 +26,6 @@ class Botones extends React.Component {
           <br/>
           <Button variant="primary" href='#/' onClick={()=> this.setRedirect("test")}>Testear Camunda</Button>
           <br/>
-
       </div>
     );
   }
