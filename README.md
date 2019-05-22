@@ -27,12 +27,12 @@ Tener en cuenta que para instalar Tomcat se requiere tener instaladas algunas de
 **Nota:** Se cambio el puerto predeterminado de react que es el 3000 al puerto 80 por un inconveniente que hubo con el login y al ser un puerto inferior a 1024 pide permisos de autenticación de root
 
 ## Modificar el proyecto y publicar cambios en el repositorio de Github
-
-2. Abrir el folder del proyecto es decir el fichero llamado 'Front'con el editor de preferencia y hacer las modificaciones correspondientes
-2. Ejecutar el comando 'git status' para ver los cambios que ha realizado
-3. Ejecutar el comando 'git add .'  para mandar las modificaciones a la staging area
-4. Hacer commit a los cambios con el comando 'git commit -m "Texto descriptivo del cambio realizado" '
-5. Hacer pull al proyecto usando el comando 'git pull' para asegurarse tener la última version publicada (Puede generar conflictos)
-6. Hacer push para publicar los cambios en los repositorios de github con el comando 'git push'. Tener en cuenta que para realizar esta acción hay que loguearse con los credenciales de la cuenta de github
+1. Hacer git pull para traer del github al local las ultimas modificaciones al proyecto
+2. Abrir el folder del proyecto es decir el fichero llamado 'Front' con el editor de preferencia y hacer las modificaciones correspondientes
+3. Ejecutar el comando 'git status' para ver los cambios que ha realizado
+4. Ejecutar el comando 'git add .'  para mandar las modificaciones a la staging area
+5. Hacer commit a los cambios con el comando 'git commit -m "Texto descriptivo del cambio realizado" '
+6. Hacer pull al proyecto usando el comando 'git pull' para asegurarse tener la última version publicada (Puede generar conflictos)
+7. Hacer push para publicar los cambios en los repositorios de github con el comando 'git push'. Tener en cuenta que para realizar esta acción hay que loguearse con los credenciales de la cuenta de github
 
 **Nota:** A menos que este totalmente seguro de las modificaciones que realizo es recomendable solamente hacer push a la rama develop.
