@@ -20,8 +20,6 @@ export default class Home extends React.Component {
             <br/>
             <Sidebar2 />
             </div>
-
-
         );
     }
 }
