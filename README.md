@@ -14,6 +14,7 @@ Para poder ver y aportar al desarrollo del proyecto  es necesario tener instalad
 * Tomcat (Opcional)
 
 Tener en cuenta que para instalar Tomcat se requiere tener instaladas algunas dependencias de Java.
+Toca actualizar a la ultima version de nodejs
 
 ## Clonar el proyecto y ejecutarlo
 

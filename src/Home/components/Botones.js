@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect  } from "react-router-dom";
 import Login from '../../Login/Login.js';
-import { Button,Image } from 'react-bootstrap';
+import { Button,Imagen } from 'react-bootstrap';
 
 
 class Botones extends React.Component {
