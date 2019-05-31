@@ -1,22 +1,22 @@
 import React from 'react';
-import './App.css';
-import TestBPMN from '../TestBPMN/TestBPMN.js';
-import Home from '../Home/Home.js';
+import './styles/App.css';
+import TestBPMN from './views/TestBPMN.js';
+import Home from './views/Home.js';
 import { BrowserRouter as Router, Route} from "react-router-dom";
+import 'materialize-css/dist/css/materialize.min.css';
 
 
 export default class App extends React.Component {
-  constructor(props){
-    super(props);
-  }
+
 
   render(){
     return (
       <div className="App">
         <meta name="google-signin-client_id" content="331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com"></meta>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <header >
-        </header>
+        <header ></header>
+        <main></main>
+        <foot></foot>
 
       <Router>
         <div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect  } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
-import { Button } from 'react-bootstrap';
 
 export default class Login extends React.Component {
 
@@ -29,11 +28,11 @@ export default class Login extends React.Component {
     checkLogued(){
         let sessionData = JSON.parse(sessionStorage.getItem("movilidadUser"));
         if(sessionData != null){
-            this.state= {
-                clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
-                isLogued:true,
-                user:sessionData
-            }
+            this.setState({
+              clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
+              isLogued:true,
+              user:sessionData
+            });
         }
     }
 
@@ -102,7 +101,7 @@ export default class Login extends React.Component {
                 <br/>
                     <h2>Bienvenido <br/>{this.state.user.firstName} {this.state.user.lastName}</h2>
                     <br/>
-                    <Button href="/" onClick={this.logOut} variant="danger" > Log Out</Button>
+                    <a class="waves-effect waves-light btn"  href="/" onClick={this.logOut} >Log out</a>
                 </div>
             </div>
         );
