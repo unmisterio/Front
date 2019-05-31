@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect  } from "react-router-dom";
 import Login from './Login.js';
-import { Button } from 'react-bootstrap';
+import M from "materialize-css";
 
 
 class Botones extends React.Component {
@@ -9,6 +9,11 @@ class Botones extends React.Component {
     super(props);
     this.redirectTo="";
   }
+
+  componentDidMount() {
+        // Auto initialize all the things!
+        M.AutoInit();
+    }
 
   setRedirect(path){
       this.redirectTo=path;
@@ -24,7 +29,7 @@ class Botones extends React.Component {
       <div>
           <Login />
           <br/>
-          <Button variant="primary" href='#/' onClick={()=> this.setRedirect("test")}>Testear Camunda</Button>
+          <a class="waves-effect waves-light btn" href='#/' onClick={()=> this.setRedirect("test")}>Testear Camunda</a>
           <br/>
       </div>
     );

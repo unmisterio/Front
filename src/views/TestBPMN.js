@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
 import Sidebar from "../components/Sidebar";
-import Sidebar2 from "../components/Sidebar2";
+import Footer from "../components/Footer";
 
 export default class TestBPMN extends React.Component {
     constructor(props){
@@ -196,7 +196,6 @@ export default class TestBPMN extends React.Component {
             <button onClick={this.executeTask} >
                Terminar Tarea
            </button>
-           <Sidebar2 />
 
 
         </div>
