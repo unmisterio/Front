@@ -1,14 +1,12 @@
 import React from 'react';
-import './App.css';
-import TestBPMN from '../TestBPMN/TestBPMN.js';
-import Home from '../Home/Home.js';
+import './styles/App.css';
+import TestBPMN from './views/TestBPMN.js';
+import Home from './views/Home.js';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 
 
 export default class App extends React.Component {
-  constructor(props){
-    super(props);
-  }
+
 
   render(){
     return (

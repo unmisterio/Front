@@ -29,11 +29,11 @@ export default class Login extends React.Component {
     checkLogued(){
         let sessionData = JSON.parse(sessionStorage.getItem("movilidadUser"));
         if(sessionData != null){
-            this.state= {
-                clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
-                isLogued:true,
-                user:sessionData
-            }
+            this.setState({
+              clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
+              isLogued:true,
+              user:sessionData
+            });
         }
     }
 

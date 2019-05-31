@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../logo.svg';
-import Sidebar from "../Home/components/Sidebar";
-import Sidebar2 from "../Home/components/Sidebar2";
+import logo from '../assets/logo.svg';
+import Sidebar from "../components/Sidebar";
+import Sidebar2 from "../components/Sidebar2";
 
 export default class TestBPMN extends React.Component {
     constructor(props){
@@ -156,7 +156,7 @@ export default class TestBPMN extends React.Component {
         <div className="App">
 
           <Sidebar />
-  
+
           <br/>
             <div style={{ display: this.state.loading ? 'block' : 'none' }}>
             <h2>Consultando</h2>
