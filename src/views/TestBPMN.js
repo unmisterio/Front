@@ -1,7 +1,4 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 
 export default class TestBPMN extends React.Component {
     constructor(props){
@@ -152,15 +149,11 @@ export default class TestBPMN extends React.Component {
 
   render(){
     return (
-
-        <div className="App">
-
-          <Sidebar />
-
+      <div className="container">
+        <div className="App center">
           <br/>
             <div style={{ display: this.state.loading ? 'block' : 'none' }}>
             <h2>Consultando</h2>
-            <img src={logo} className="App-logo" alt="logo" />
             </div>
 
           <button onClick={this.instanceProcess}>
@@ -199,6 +192,9 @@ export default class TestBPMN extends React.Component {
 
 
         </div>
+
+      </div>
+
       );
   }
 }
