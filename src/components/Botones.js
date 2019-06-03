@@ -26,12 +26,15 @@ class Botones extends React.Component {
      }
 
     return(
-      <div>
-          <Login />
-          <br/>
-          <a class="waves-effect waves-light btn" href='#/' onClick={()=> this.setRedirect("test")}>Testear Camunda</a>
-          <br/>
+      <div className="container">
+        <div className="center">
+            <Login />
+            <br/>
+            <a class="waves-effect waves-light btn" href='#/' onClick={()=> this.setRedirect("test")}>Testear Camunda</a>
+            <br/>
+        </div>
       </div>
+
     );
   }
 }
