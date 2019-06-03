@@ -1,42 +1,22 @@
 import React from "react";
-import { Redirect  } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import Login from './Login.js';
-import M from "materialize-css";
 
 
-class Botones extends React.Component {
-  constructor(props) {
-    super(props);
-    this.redirectTo="";
-  }
 
-  componentDidMount() {
-        // Auto initialize all the things!
-        M.AutoInit();
-    }
-
-  setRedirect(path){
-      this.redirectTo=path;
-  }
-
-  render(){
-
-     if(this.redirectTo==="test"){
-        return <Redirect to='/test' ></Redirect>
-     }
-
+const Botones =() =>{
     return(
       <div className="container">
         <div className="center">
+            <br/><br/><br/><br/>
             <Login />
             <br/>
-            <a class="waves-effect waves-light btn" href='#/' onClick={()=> this.setRedirect("test")}>Testear Camunda</a>
+            <button className="btn grey darken-3"><Link to='/camunda'>Testear Camunda</Link></button>
             <br/>
         </div>
       </div>
 
     );
-  }
 }
 
 export default Botones;

@@ -151,11 +151,11 @@ export default class TestBPMN extends React.Component {
     return (
       <div className="container">
         <div className="App center">
-          <br/>
-            <div style={{ display: this.state.loading ? 'block' : 'none' }}>
-            <h2>Consultando</h2>
-            </div>
 
+            <div style={{ display: this.state.loading ? 'block' : 'none' }}>
+            <h5>Consultando</h5>
+            </div>
+          <br/><br/>
           <button onClick={this.instanceProcess}>
             Lanzar nueva instancia
           </button>

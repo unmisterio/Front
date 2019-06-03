@@ -8,13 +8,16 @@ var phantom = {
     display: 'block',
 }
 
+const text={
+  padding:"9%",
+}
 const Footer =()=> {
 
     return(
       <div style={phantom}>
         <footer className="page-footer grey darken-3">
           <div className="container ">
-              <p className="center " >Todos los derechos reservados</p>
+              <p className="center " style={text}>Todos los derechos reservados</p>
           </div>
        </footer>
       </div>
