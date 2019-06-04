@@ -2,7 +2,8 @@
 import React from "react";
 import axios from 'axios';
 import Convocatorias from './Convocatorias';
-import Paginacion from './Paginacion'
+import Paginacion from './Paginacion';
+import Search from './Search'
 
 
 const Home =()=>{
@@ -12,11 +13,7 @@ const Home =()=>{
               <form className="col s12">
                 <div className="row">
 
-                    <div className="input-field col s4">
-                      <i className="material-icons prefix">search</i>
-                      <input id="icon_prefix" type="text" className="validate"></input>
-                      <label htmlFor="icon_prefix">search</label>
-                    </div>
+                    <Search/>
 
                     <div className="right">
                       <div className="col">
