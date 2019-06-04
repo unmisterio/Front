@@ -5,9 +5,10 @@ import Info from './components/Info';
 import Navbar from "./components/Navbar";
 import ConvEst from "./components/ConvEst";
 import Home from "./components/Home";
-import Botones from './components/Botones'
+import Botones from './components/Botones';
+import Admin from './components/Admin'
 //import Footer from "./components/Footer";
-import { BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route,Switch} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css";
 
@@ -25,11 +26,20 @@ export default class App extends React.Component {
           <meta name="google-signin-client_id" content="331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com"></meta>
           <script src="https://apis.google.com/js/platform.js" async defer></script>
           <Navbar/>
-          <Route exact path="/" component={Home} />
-          <Route path="/camunda" component={TestBPMN} />
-          <Route path="/info" component={Info} />
-          <Route path="/convocatoria" component={ConvEst} />
-          <Route path="/test" component={Botones} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/camunda" component={TestBPMN} />
+              <Route path="/info" component={Info} />
+              <Route path="/test" component={Botones} />
+              <Route path="/estudiante" component={ConvEst} />
+              <Route path="/admin" component={Admin} />
+              <Route path="/Aprobar" component={Info} />
+              <Route path="/Devolver" component={Info} />
+              <Route path="/Rechazar" component={Info} />
+              <Route path="/Activas" component={Info} />
+              <Route path="/Editar" component={Info} />
+              <Route path="/ELiminar" component={Info} />
+            </Switch>
           {/*<Footer/>*/}
         </div>
       </BrowserRouter>
