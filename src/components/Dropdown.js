@@ -1,16 +1,23 @@
 import React,{Component}from "react";
 import {Link} from 'react-router-dom';
+import M from 'materialize-css';
 
 
 class Dropdown extends Component {
+
+  componentDidMount() {
+       let elems = document.querySelectorAll('.dropdown-trigger');
+       M.Dropdown.init(elems, {inDuration: 300, outDuration: 225});
+   }
+
   render(){
     return(
       <div className="container">
 
-        <a className='dropdown-trigger btn grey'  data-target='dropdown1'>{this.props.name}</a>
+        <a className='dropdown-trigger btn grey darken-3'  data-target={this.props.data}>{this.props.name}</a>
 
-          <ul id='dropdown1' className='dropdown-content '>
-            <li><Link to={"/"+ this.props.firs}>{this.props.first}</Link></li>
+          <ul id={this.props.data} className='dropdown-content '>
+            <li><Link to={"/"+ this.props.first}>{this.props.first}</Link></li>
             <li><Link to={"/"+ this.props.second}>{this.props.second}</Link></li>
             <li><Link to={"/"+ this.props.third}>{this.props.third}</Link></li>
           </ul>

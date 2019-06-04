@@ -11,8 +11,8 @@ const Admin =()=> {
       <br/>
       <div className="row center">
           <div className="center">
-            <div className="col" id='1'> <Dropdown name="Solicitudes" first="Aprobar" second="Devolver" third="Rechazar"/></div>
-            {/*<div className="col" id='2'> <Dropdown name="Convocatorias" first="Activas" second="Editar" third="Eliminar"/></div>*/}
+            <div className="col" id='1'> <Dropdown name="Solicitudes" first="Aprobar" second="Devolver" third="Rechazar" data='drop1'/></div>
+            <div className="col" id='2'> <Dropdown name="Convocatorias" first="Activas" second="Editar" third="Eliminar" data='drop2'/></div>
           </div>
       </div>
      <Search/>
