@@ -29,9 +29,6 @@ class Convocatorias extends Component{
                   <div className="col"><span className="card-title">{convocatoria.title}</span></div>
                   <div className="col"><p>{convocatoria.body}</p></div>
               </div>
-
-
-
             </div>
           </div>
         )
