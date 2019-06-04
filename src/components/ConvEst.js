@@ -8,41 +8,27 @@ const ConvEst =()=> {
     <div className="container">
       <h4 className="center">Convocatoria de estudiantes</h4>
     <br/>
-    <div className = "col-3">
-      <div className="secondbc col-4 divReg">
-        <div id = "avatar" align = "left" className="containerReg">
-          <div id="avatarjpg" className="col-3">
-                <div>
-                  <img id = "imgAvatar" src = {avatarjpg} alt="logohome" width = "30%" />
-                </div>
-
-          <div id = "info" align = "center" valign = "top" className="containerReg" width = "25%">
-                        <div className = "col-10 centerdiv inputReg">
-                                Nombres<input type="user" className="containerReg" id="inputUserName" placeholder="Nombres"
-                                />
-                        </div>
-                        <div className="col-10 centerdiv inputReg">
-                                Apellidos<input type="user" className="containerReg" id="Name" placeholder="Apellidos"
-                                                  />
-                        </div>
-                        <div className="col-10 centerdiv inputReg">
-                                Carrera  <input type="user" className="containerReg" id="inputUserName" placeholder="Carrera"
-                                />
-                        </div>
+    <div className="row">
+      <div className="col s4"><img id = "imgAvatar" src = {avatarjpg} width = "80%" /></div>
+      <div className="col">
+          <div className="row">
+              <div className="col"><span>Carrera</span></div>
+              <div className="col"><input type="user"  id="Degree" placeholder="Carrera"></input></div>
           </div>
+          <div className="row">
+                <div className ="col"><span>Nombres</span></div>
+                <div className="col"><input type="user"  id="Name" placeholder="Nombres"/></div>
           </div>
+          <div className="row">
+                <div className ="col"><span>Apellidos</span></div>
+                <div className="col"><input type="user"  id="Username" placeholder="Apellidos"/></div>
+          </div>
+      </div>
     </div>
-    </div>
+      <div className="row">
+        <div className="col push-s1"><button className="btn grey darken-3">Ajustes</button></div>
+      </div>
 
-
-
-        <div id = "boton">
-    						<div className="container">
-              				<button className="btn comfortaa buttonLogin fivebc firstc">Ajustes</button>
-            		</div>
-
-    		</div>
-    </div>
     </div>
   );
 
