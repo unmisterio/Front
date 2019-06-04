@@ -2,7 +2,7 @@
 Este es el repositorio oficial del FRONTEND del proyecto de movilidad academica, desarrollado para la asignatura de Ingenieria de Software II
 ## Requisitos
 
-Para poder ver y aportar al desarrollo del proyecto  es necesario tener instalado: (Anexo comandos para ver la version y si estan instalado en el ordenador):
+Para poder ver y aportar al desarrollo del proyecto  es necesario tener instalado: (Anexo comandos para ver la versión y verificar si estan instalados en el ordenador):
 * NodeJS &rarr; node  -v
 * Express &rarr; npm  -v
 * Git &rarr;  git  --version
@@ -14,7 +14,7 @@ Para poder ver y aportar al desarrollo del proyecto  es necesario tener instalad
 * Tomcat (Opcional)
 
 Tener en cuenta que para instalar Tomcat se requiere tener instaladas algunas dependencias de Java.
-Para que no haya problemas de dependencias es mejor actualizar a las verciones mas recientes.
+Para que no haya problemas de dependencias es mejor actualizar a las versiones más recientes.
 
 ## Clonar el proyecto y ejecutarlo
 
@@ -34,7 +34,7 @@ Para que no haya problemas de dependencias es mejor actualizar a las verciones m
 4. Ejecutar el comando 'git status' para ver los cambios que ha realizado
 5. Ejecutar el comando 'git add .'  para mandar las modificaciones a la staging area
 6. Hacer commit a los cambios con el comando 'git commit -m "Texto descriptivo de los cambios realizado" '
-7. Hacer pull al proyecto usando el comando 'git pull' para asegurarse tener la última version del proyecte (Puede generar conflictos)
+7. Hacer pull al proyecto usando el comando 'git pull' para asegurarse tener la última version del proyecto (Puede generar conflictos)
 7. Hacer push para publicar los cambios en los repositorios de github con el comando 'git push'. Tener en cuenta que para realizar esta acción hay que loguearse con los credenciales de la cuenta de github
 
 **Nota:** A menos que este totalmente seguro de las modificaciones que realizo es recomendable solamente hacer push a la rama develop.
