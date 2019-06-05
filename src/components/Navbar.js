@@ -12,6 +12,7 @@ const Navbar =()=> {
                 <li><Link to='/info'>Informacion</Link></li>
                 <li><Link to='/admin'>Admin</Link></li>
                 <li><Link to='/estudiante'>Estudiante</Link></li>
+                <li><Link to='/Rol/Rol'>Roles</Link></li>
               </ul>
           </div>
       </nav>
