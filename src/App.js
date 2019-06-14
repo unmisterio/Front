@@ -6,7 +6,10 @@ import Navbar from "./components/Navbar";
 import ConvEst from "./components/ConvEst";
 import Home from "./components/Home";
 import Botones from './components/Botones';
-import Admin from './components/Admin'
+import Admin from './components/Admin';
+import Form from './components/Form';
+import BaseConv from './components/BaseConv';
+import BaseForm from './components/BaseForm';
 //import Footer from "./components/Footer";
 import { BrowserRouter, Route,Switch} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
@@ -38,7 +41,8 @@ export default class App extends React.Component {
               <Route path="/Rechazar" component={Info} />
               <Route path="/Activas" component={Info} />
               <Route path="/Editar" component={Info} />
-              <Route path="/ELiminar" component={Info} />
+              <Route path="/Eliminar" component={Info} />
+              <Route path="/Form" component={Form} />
             </Switch>
           {/*<Footer/>*/}
         </div>
