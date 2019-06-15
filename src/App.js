@@ -1,6 +1,5 @@
 import React from 'react';
 import TestBPMN from './views/TestBPMN.js';
-import Test from './views/Test.js';
 import Info from './components/Info';
 import Navbar from "./components/Navbar";
 import ConvEst from "./components/ConvEst";
@@ -16,6 +15,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css";
 
 
+
 export default class App extends React.Component {
 
   componentDidMount() {
@@ -24,10 +24,12 @@ export default class App extends React.Component {
 
   render(){
     return (
+
       <BrowserRouter>
         <div className="App">
           <meta name="google-signin-client_id" content="331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com"></meta>
           <script src="https://apis.google.com/js/platform.js" async defer></script>
+
           <Navbar/>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -44,6 +46,7 @@ export default class App extends React.Component {
               <Route path="/Eliminar" component={Info} />
               <Route path="/Form" component={Form} />
             </Switch>
+
           {/*<Footer/>*/}
         </div>
       </BrowserRouter>
