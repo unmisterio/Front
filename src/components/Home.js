@@ -1,6 +1,5 @@
 //Esta es la mia
 import React from "react";
-import axios from 'axios';
 import Convocatorias from './Convocatorias';
 import Paginacion from './Paginacion';
 import Search from './Search'
