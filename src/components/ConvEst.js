@@ -1,6 +1,7 @@
 //Del otro grupo
 import React from "react";
-import avatarjpg from '../assets/avatar.jpg'
+import avatarjpg from '../assets/avatar.jpg';
+import BaseConv from './BaseConv';
 
 
 const ConvEst =()=> {
@@ -11,18 +12,9 @@ const ConvEst =()=> {
     <div className="row">
       <div className="col s4"><img id = "imgAvatar" src = {avatarjpg} width = "80%" alt="" /></div>
       <div className="col">
-          <div className="row">
-              <div className="col"><span>Carrera</span></div>
-              <div className="col"><input type="user"  id="Degree" placeholder="Carrera"></input></div>
-          </div>
-          <div className="row">
-                <div className ="col"><span>Nombres</span></div>
-                <div className="col"><input type="user"  id="Name" placeholder="Nombres"/></div>
-          </div>
-          <div className="row">
-                <div className ="col"><span>Apellidos</span></div>
-                <div className="col"><input type="user"  id="Username" placeholder="Apellidos"/></div>
-          </div>
+          <BaseConv name="Carrera"/>
+          <BaseConv name="Nombres"/>
+          <BaseConv name="Apellidos"/>
       </div>
     </div>
       <div className="row">
