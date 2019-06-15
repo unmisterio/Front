@@ -43,8 +43,10 @@ export default class App extends React.Component {
               <Route path="/Rechazar" component={Info} />
               <Route path="/Activas" component={Info} />
               <Route path="/Editar" component={Info} />
+
               <Route path="/Eliminar" component={Info} />
               <Route path="/Form" component={Form} />
+
             </Switch>
 
           {/*<Footer/>*/}
