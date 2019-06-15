@@ -11,7 +11,7 @@ import Admin from './components/Admin'
 import { BrowserRouter, Route,Switch} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css";
-import Rol from './components/Rol/Rol'
+
 
 
 export default class App extends React.Component {
@@ -22,12 +22,12 @@ export default class App extends React.Component {
 
   render(){
     return (
-      
+
       <BrowserRouter>
         <div className="App">
           <meta name="google-signin-client_id" content="331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com"></meta>
           <script src="https://apis.google.com/js/platform.js" async defer></script>
-          
+
           <Navbar/>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -42,10 +42,9 @@ export default class App extends React.Component {
               <Route path="/Activas" component={Info} />
               <Route path="/Editar" component={Info} />
               <Route path="/ELiminar" component={Info} />
-              <Route path="/Rol" component={Rol} />
-              
+
             </Switch>
-            
+
           {/*<Footer/>*/}
         </div>
       </BrowserRouter>
