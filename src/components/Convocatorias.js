@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import axios from 'axios';
-import prueba from '../assets/prueba.png'
+
 
 class Convocatorias extends Component{
   state={
@@ -10,7 +10,6 @@ class Convocatorias extends Component{
   componentDidMount(){
     axios.get('https://jsonplaceholder.typicode.com/posts/')
       .then(res=>{
-        console.log(res);
         this.setState({
           convocatorias:res.data.slice(0,10)
         })

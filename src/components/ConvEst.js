@@ -9,7 +9,7 @@ const ConvEst =()=> {
       <h4 className="center">Convocatoria de estudiantes</h4>
     <br/>
     <div className="row">
-      <div className="col s4"><img id = "imgAvatar" src = {avatarjpg} width = "80%" /></div>
+      <div className="col s4"><img id = "imgAvatar" src = {avatarjpg} width = "80%" alt="" /></div>
       <div className="col">
           <div className="row">
               <div className="col"><span>Carrera</span></div>

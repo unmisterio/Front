@@ -1,6 +1,5 @@
 import React from 'react';
 import TestBPMN from './views/TestBPMN.js';
-import Test from './views/Test.js';
 import Info from './components/Info';
 import Navbar from "./components/Navbar";
 import ConvEst from "./components/ConvEst";
