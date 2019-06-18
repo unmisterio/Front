@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import prueba from '../assets/prueba.png'
 
 
 class Convocatorias extends Component{
@@ -11,7 +12,7 @@ class Convocatorias extends Component{
     axios.get('https://jsonplaceholder.typicode.com/posts/')
       .then(res=>{
         this.setState({
-          convocatorias:res.data.slice(0,10)
+          convocatorias:res.data.slice(0,5)
         })
       })
   }
@@ -22,13 +23,13 @@ class Convocatorias extends Component{
       convocatorias.map(convocatoria=>{
         return(
           <div className="card" key={convocatoria.id}>
-            <div className="card-content">
-              <div className="row">
-                  {/*<div className="col s3"><img src={prueba}/></div>*/}
-                  <div className="col"><span className="card-title">{convocatoria.title}</span></div>
-                  <div className="col"><p>{convocatoria.body}</p></div>
+              <div className="card-content row">
+                  <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
+                     <div className="section">
+                       <span className="card-title">{convocatoria.title}</span>
+                       <p>{convocatoria.body}</p>
+                     </div>
               </div>
-            </div>
           </div>
         )
       })
