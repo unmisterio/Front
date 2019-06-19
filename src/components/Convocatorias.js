@@ -9,25 +9,45 @@ class Convocatorias extends Component{
   }
 
   componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/posts/')
+    axios.get('http://localhost:3000/announcements')
       .then(res=>{
+        console.log(res);
+        
         this.setState({
           convocatorias:res.data.slice(0,5)
         })
       })
   }
 
+  /*componentDidMount(){
+    axios.get('https://jsonplaceholder.typicode.com/posts/')
+      .then(res=>{
+        this.setState({
+          convocatorias:res.data.slice(0,5)
+        })
+      })
+  }*/
+
+  //https://jsonplaceholder.typicode.com/posts/
   render(){
     const{convocatorias}=this.state;
     const convList=convocatorias.length?(
       convocatorias.map(convocatoria=>{
         return(
-          <div className="card" key={convocatoria.id}>
+          <div className="card" key={convocatoria.idAnnouncement}>
               <div className="card-content row">
                   <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
                      <div className="section">
-                       <span className="card-title">{convocatoria.title}</span>
-                       <p>{convocatoria.body}</p>
+                       <b>Nombre: </b> <span >{convocatoria.targetUniversityInfo.name}</span><br/>
+                       <b>Modalidad: </b> <br/>
+                       <div className="row">
+                         <div className="col s6">
+                            <b>Vacantes: </b> <span >{convocatoria.vacant}</span>
+                        <div className="col">
+                            <b>Aplicantes: </b> <br/>
+                        </div>  
+                         </div> 
+                       </div>
                      </div>
               </div>
           </div>
