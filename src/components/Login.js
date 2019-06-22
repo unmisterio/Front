@@ -38,6 +38,7 @@ export default class Login extends React.Component {
 
     logOut(){
         sessionStorage.clear();
+        localStorage.clear();
         this.setState({
             isLogued:false
         })
