@@ -1,7 +1,6 @@
 //Esta es la mia
 import React from "react";
 import Convocatorias from './Convocatorias';
-import Pagination from './Pagination';
 import Search from './Search'
 
 
@@ -40,7 +39,7 @@ const Home =()=>{
             <Convocatorias />
 
 {/*Paginacion*/}
-            <Pagination />
+            
 
       </div>
         );
