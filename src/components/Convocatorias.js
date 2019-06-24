@@ -9,7 +9,7 @@ class Convocatorias extends Component{
     this.state={
       convocatorias:[],
       current: 1,
-      perPage:10
+      perPage:5
     };
     this.handleClick=this.handleClick.bind(this);
   }
@@ -20,7 +20,7 @@ class Convocatorias extends Component{
     });
   }
 
-  /*componentDidMount(){
+  componentDidMount(){
     axios.get('http://localhost:3000/announcements')
       .then(res=>{
         console.log(res);
@@ -29,19 +29,19 @@ class Convocatorias extends Component{
           convocatorias:res.data
         })
       })
-  } */
+  } 
 
   /* Con conexion a nube de amazon*/
-  componentDidMount(){
+  /*componentDidMount(){
     axios.get('http://52.6.45.175:3000/announcements')
       .then(res=>{
-        /*console.log(res);*/
+        /*console.log(res);
         
         this.setState({
           convocatorias:res.data
         })
       })
-  }
+  } */
 
   /*componentDidMount(){
     axios.get('https://jsonplaceholder.typicode.com/posts/')
