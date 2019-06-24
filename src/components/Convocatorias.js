@@ -20,13 +20,25 @@ class Convocatorias extends Component{
     });
   }
 
-  componentDidMount(){
+  /*componentDidMount(){
     axios.get('http://localhost:3000/announcements')
       .then(res=>{
         console.log(res);
         
         this.setState({
-          convocatorias:res.data.slice(0,5)
+          convocatorias:res.data
+        })
+      })
+  } */
+
+  /* Con conexion a nube de amazon*/
+  componentDidMount(){
+    axios.get('http://52.6.45.175:3000/announcements')
+      .then(res=>{
+        /*console.log(res);*/
+        
+        this.setState({
+          convocatorias:res.data
         })
       })
   }
@@ -47,11 +59,6 @@ class Convocatorias extends Component{
     const indexOfLast = current*perPage;
     const indexOfFirst= indexOfLast - perPage;
     const currentConv = convocatorias.slice(indexOfFirst,indexOfLast);
-
-    const renderConv  = currentConv.map((convocatorias,index)=>{
-      return <li  key={index}>{convocatorias}</li>
-    })
-
     const pageNumbers=[];
     for(let i =1;i<=Math.ceil(convocatorias.length/perPage);i++){
       pageNumbers.push(i);
@@ -59,8 +66,8 @@ class Convocatorias extends Component{
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-       <li className="waves-effect"  >
-            <a key={number} id={number} onClick={this.handleClick}>{number}</a>
+       <li className="waves-effect"  key={number}>
+            <a id={number} onClick={this.handleClick}>{number}</a>
         </li> 
       );
     });
