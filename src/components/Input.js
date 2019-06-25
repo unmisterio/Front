@@ -1,15 +1,15 @@
 import React, {Component}from "react";
 
 
-class BaseConv extends Component {
+class Input extends Component {
   render(){
     return(
         <div className="row">
           <div className="input-field col s6">
-             <input type="text" className="validate" id={this.props.name} ></input>
+             <input type="text" className="validate" id={this.props.name} onChange={this.props.handle}></input>
               <label htmlFor={this.props.name}>{this.props.name}</label>     
           </div>
-          <div className="input-field col s6">
+          <div className="input-field col ">
             <a className="btn tooltipped " data-position="right" data-tooltip={this.props.description}> 
               <i className="material-icons">help</i>
             </a>
@@ -23,4 +23,4 @@ class BaseConv extends Component {
 
 }
 
-export default BaseConv;
+export default Input;
