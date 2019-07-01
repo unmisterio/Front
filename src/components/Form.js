@@ -5,7 +5,8 @@ import Input from './Input'
 const Form =()=> {
   return(
     <div className="container">
-        <Basic />
+      <form action="">
+      <Basic />
         <h2>Contact person in case of emergency</h2>
         <Input name="Name of the contact person" description="Hola"/>
         <Input name="Kinship" description="Hola"/>
@@ -18,8 +19,9 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Institution of Origin</option>
-              <option value="un">Universidad Nacional de Colombia</option>
+              <option value="" disabled select>Institution of Origin</option>
+              <option value="1">Universidad Nacional de Colombia</option>
+              <option value="2">Universidad de los Andes</option>
             </select>
           </div> 
           <div className="col s6">
@@ -32,7 +34,7 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Campus</option>
+              <option value="" disabled select>Campus</option>
               <option value="1">Opcion 1</option>
               <option value="2">Opcion 2</option>
               <option value="3">Opcion 3</option>
@@ -48,7 +50,7 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Faculty</option>
+              <option value="" disabled select>Faculty</option>
               <option value="1">Opcion 1</option>
               <option value="2">Opcion 2</option>
               <option value="3">Opcion 3</option>
@@ -64,7 +66,7 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Curricular program</option>
+              <option value="" disabled select>Curricular program</option>
               <option value="1">Opcion 1</option>
               <option value="2">Opcion 2</option>
               <option value="3">Opcion 3</option>
@@ -87,7 +89,7 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Institution</option>
+              <option value="" disabled select>Institution</option>
               <option value="1">Opcion 1</option>
               <option value="2">Opcion 2</option>
               <option value="3">Opcion 3</option>
@@ -122,7 +124,7 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Country</option>
+              <option value="" disabled select>Country</option>
               <option value="1">Opcion 1</option>
               <option value="2">Opcion 2</option>
               <option value="3">Opcion 3</option>
@@ -148,7 +150,7 @@ const Form =()=> {
         <div className="row">
           <div className="col s6">
             <select>
-              <option value="" disabled selected>Modality</option>
+              <option value="" disabled select>Modality</option>
               <option value="1">Opcion 1</option>
               <option value="2">Opcion 2</option>
               <option value="3">Opcion 3</option>
@@ -234,6 +236,9 @@ const Form =()=> {
             <button className="btn grey darken-3">Enviar</button>
           </div>
         </div>
+
+      </form>
+        
         
         
     </div>
