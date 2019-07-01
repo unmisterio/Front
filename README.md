@@ -1,4 +1,4 @@
-# Guia básica del FRONT
+# Guia básica del FRONT Final
 Este es el repositorio oficial del FRONTEND del proyecto de movilidad academica, desarrollado para la asignatura de Ingenieria de Software II
 ## Requisitos
 
