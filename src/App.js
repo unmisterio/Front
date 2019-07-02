@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Botones from './components/Botones';
 import Admin from './components/Admin';
 import Form from './components/Form';
-import Create from './components/Create'
+import Create from './views/Create'
 import { BrowserRouter, Route,Switch} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css";

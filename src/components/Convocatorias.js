@@ -9,7 +9,7 @@ class Convocatorias extends Component{
     this.state={
       convocatorias:[],
       current: 1,
-      perPage:5
+      perPage:10
     };
     this.handleClick=this.handleClick.bind(this);
   }
@@ -20,7 +20,7 @@ class Convocatorias extends Component{
     });
   }
 
-  componentDidMount(){
+  /*componentDidMount(){
     axios.get('http://localhost:3000/announcements')
       .then(res=>{
         console.log(res);
@@ -43,14 +43,14 @@ class Convocatorias extends Component{
       })
   } */
 
-  /*componentDidMount(){
+  componentDidMount(){
     axios.get('https://jsonplaceholder.typicode.com/posts/')
       .then(res=>{
         this.setState({
           convocatorias:res.data
         })
       })
-  }*/
+  }
 
   //https://jsonplaceholder.typicode.com/posts/
   render(){
@@ -79,8 +79,8 @@ class Convocatorias extends Component{
               <div className="card-content row">
                   <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
                      <div className="section">
-                     {/*<b>Nombre: </b> <span >{convocatoria.title}</span><br/>*/}
-                      <b>Nombre: </b> <span >{convocatoria.targetUniversityInfo.name}</span><br/>
+                     <b>Nombre: </b> <span >{convocatoria.title}</span><br/>
+                      {/*<b>Nombre: </b> <span >{convocatoria.targetUniversityInfo.name}</span><br/>*/}
                        <b>Modalidad: </b> <br/>
                        <div className="row">
                          <div className="col s6">

@@ -6,7 +6,7 @@ class Input extends Component {
     return(
         <div className="row">
           <div className="input-field col s6">
-             <input type="text" className="validate" id={this.props.name} onChange={this.props.handle}></input>
+             <input type="text" className="validate" id={this.props.id} onChange={this.props.handle}></input>
               <label htmlFor={this.props.name}>{this.props.name}</label>     
           </div>
           <div className="input-field col ">
