@@ -1,7 +1,7 @@
 import React from "react";
 import Search from './Search'
 import Dropdown from './Dropdown'
-import Convocatorias from './Convocatorias'
+import Convocatorias from '../views/Announcements'
 
 
 const Admin =()=> {

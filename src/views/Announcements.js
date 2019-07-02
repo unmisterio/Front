@@ -3,7 +3,7 @@ import axios from 'axios';
 import prueba from '../assets/prueba.png'
 
 
-class Convocatorias extends Component{
+class Announcements extends Component{
   constructor(){
     super();
     this.state={
@@ -114,4 +114,4 @@ class Convocatorias extends Component{
   }
 }
 
-export default Convocatorias;
+export default Announcements;

@@ -7,7 +7,8 @@ import Home from "./components/Home";
 import Botones from './components/Botones';
 import Admin from './components/Admin';
 import Form from './components/Form';
-import Create from './views/Create'
+import Create from './views/Create';
+import Role from './views/Role'
 import { BrowserRouter, Route,Switch} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css";
@@ -45,6 +46,7 @@ export default class App extends React.Component {
               <Route path="/Eliminar" component={Info} />
               <Route path="/form" component={Form} />
               <Route path="/create" component={Create} />
+              <Route path="/role" component={Role} />
 
             </Switch>
 
