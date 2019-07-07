@@ -9,7 +9,7 @@ class Announcements extends Component{
     this.state={
       convocatorias:[],
       current: 1,
-      perPage:10
+      perPage:5
     };
     this.handleClick=this.handleClick.bind(this);
   }
@@ -32,17 +32,17 @@ class Announcements extends Component{
   } 
 
   /* Con conexion a nube de amazon*/
-  /*componentDidMount(){
-    axios.get('http://52.6.45.175:3000/announcements')
+  componentDidMount(){
+    axios.get('http://ec2-54-89-249-85.compute-1.amazonaws.com:3000/announcements')
       .then(res=>{
-        /*console.log(res);
+        console.log(res);
         
         this.setState({
           convocatorias:res.data
         })
       })
-  } */
-
+  } 
+/*
   componentDidMount(){
     axios.get('https://jsonplaceholder.typicode.com/posts/')
       .then(res=>{
@@ -51,7 +51,7 @@ class Announcements extends Component{
         })
       })
   }
-
+*/
   //https://jsonplaceholder.typicode.com/posts/
   render(){
     const{convocatorias,current,perPage}=this.state;
@@ -79,8 +79,8 @@ class Announcements extends Component{
               <div className="card-content row">
                   <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
                      <div className="section">
-                     <b>Nombre: </b> <span >{convocatoria.title}</span><br/>
-                      {/*<b>Nombre: </b> <span >{convocatoria.targetUniversityInfo.name}</span><br/>*/}
+                     {/*<b>Nombre: </b> <span >{convocatoria.title}</span><br/>*/}
+                      <b>Nombre: </b> <span >{convocatoria.name}</span><br/>
                        <b>Modalidad: </b> <br/>
                        <div className="row">
                          <div className="col s6">
@@ -98,6 +98,7 @@ class Announcements extends Component{
     ):(
       <div className="center">"No hay convocatorias"</div>
     )
+    
     return(
       <div>
         <ul>{convList}</ul>
