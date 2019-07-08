@@ -1,7 +1,7 @@
 //Del otro grupo
 import React from "react";
 import avatarjpg from '../assets/avatar.jpg';
-import Input from './Input';
+import BaseConv from './BaseConv';
 
 
 const ConvEst =()=> {
@@ -12,9 +12,9 @@ const ConvEst =()=> {
     <div className="row">
       <div className="col s4"><img id = "imgAvatar" src = {avatarjpg} width = "80%" alt="" /></div>
       <div className="col">
-          <Input name="Carrera"/>
-          <Input name="Nombres"/>
-          <Input name="Apellidos"/>
+          <BaseConv name="Carrera"/>
+          <BaseConv name="Nombres"/>
+          <BaseConv name="Apellidos"/>
       </div>
     </div>
       <div className="row">
