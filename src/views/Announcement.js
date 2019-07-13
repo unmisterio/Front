@@ -14,8 +14,10 @@ class Announcement extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/announcements/'+(this.props.match.params.idh))
-      .then(res=>{    
+        axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements/'+(this.props.match.params.idh))
+      .then(res=>{   
+        console.log(res);
+         
         this.setState({
           convocatoria:res.data,
           requisitos:res.data.requirements
@@ -39,14 +41,30 @@ class Announcement extends Component {
             );
         });
 
+        {/*var buff =  this.state.convocatoria.image
+        var el = document.createElemrnt('img')
+        imagen.src = 'data:image/jpeg;base64,' + buff.toString('base64')*/}
+
+       
+        var  imagen = this.state.convocatoria.image
+        
+        
         return(
             <div className="container" >
                 
               <h4 className="center">{this.state.convocatoria.name} </h4><br/>
+              <b>Imagen:   </b> {this.state.convocatoria.name} <br/>
               <b>Vacantes: </b> {this.state.convocatoria.vacant}<br/>
               <b>Descripcion: </b> {this.state.convocatoria.description}<br/>
               <b>Requisitos: </b><br/><br/>
+
               <ul>{recorrer}</ul>
+              
+             
+              
+              {/*<img src="image.src" alt="Girl in a jacket"/>*/}
+
+              
               
               
               

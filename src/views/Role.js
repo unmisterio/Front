@@ -26,7 +26,7 @@ class Role extends React.Component {
         e.preventDefault();
         let a=this.state.mail;
         console.log(a)
-        axios.get('http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/users?mail='+a)
+        axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/users?mail='+a)
           .then(res=>{
               console.log(res)
             this.setState({

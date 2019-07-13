@@ -24,7 +24,7 @@ class AnnouAdmin extends Component{
 
   /* Con conexion a nube de amazon*/
   componentDidMount(){
-    axios.get('http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/announcements?nRows=50')
+    axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements?nRows=50')
       .then(res=>{
         this.setState({
           convocatorias:res.data
@@ -89,7 +89,7 @@ class AnnouAdmin extends Component{
 
       <div className="container">
           <br/>
-        <button class="mdc-icon-button material-icons"><Link to={'/create'}>add_circle_outline</Link></button>
+        <button className="mdc-icon-button material-icons"><Link to={'/create'}>add_circle_outline</Link></button>
         <ul>{convList}</ul>
         <div className="center">
           <ul className="pagination">

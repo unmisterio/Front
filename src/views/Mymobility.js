@@ -23,7 +23,7 @@ class Mymobility extends Component{
 
   /* Con conexion a nube de amazon*/
   componentDidMount(){
-    axios.get('http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/announcements?nRows=50')
+    axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements?nRows=50')
       .then(res=>{
         this.setState({
           convocatorias:res.data

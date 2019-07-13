@@ -52,7 +52,7 @@ class Create extends React.Component {
       ]
     };
    
-    axios.post(`http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/announcements`, user )
+    axios.post(`http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements`, user )
       .then(res => {
         console.log(res);
         console.log(res.data);
