@@ -8,10 +8,11 @@ import Botones from './components/Botones';
 import Admin from './components/Admin';
 import Form from './components/Form';
 import Create from './views/Create';
-import Role from './views/Role'
+import Role from './views/Role';
 import { BrowserRouter, Route,Switch} from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import M from "materialize-css";
+import Announcement from './views/Announcement.js';
 
 
 
@@ -31,7 +32,7 @@ export default class App extends React.Component {
 
           <Navbar/>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Home} /> {/*Esta es announcements*/}
               <Route path="/camunda" component={TestBPMN} />
               <Route path="/info" component={Info} />
               <Route path="/test" component={Botones} />
@@ -42,11 +43,11 @@ export default class App extends React.Component {
               <Route path="/Rechazar" component={Info} />
               <Route path="/Activas" component={Info} />
               <Route path="/Editar" component={Info} />
-
               <Route path="/Eliminar" component={Info} />
               <Route path="/form" component={Form} />
               <Route path="/create" component={Create} />
               <Route path="/role" component={Role} />
+              <Route path={"/Convocatoria"} component={Announcement} />
 
             </Switch>
 
