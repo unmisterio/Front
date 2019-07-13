@@ -25,11 +25,7 @@ const Form =()=> {
               <span htmlFor="Pass">Passport</span>
             </label>
           </div>
-            <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
+            
         </div>
           
         <Input name="ID Number" description="Blabla"/>
@@ -40,11 +36,6 @@ const Form =()=> {
             <input type="text" className="datepicker"></input>
             <label htmlFor="Date of Birth">Date of Birth</label>  
           </div>
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-            </div>
         </div>
 
         <div className="row">
@@ -59,11 +50,6 @@ const Form =()=> {
               <span htmlFor="Female">Female</span>
             </label>
           </div>
-            <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-            </div>
         </div>
         <Input name="Email" description="Hola"/>
         <Input name="Residential Address" description="Hola"/>

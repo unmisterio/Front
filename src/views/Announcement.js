@@ -1,5 +1,4 @@
 import React,{Component} from "react";
-import Announcements from './Announcements';
 import axios from 'axios';
 
 
@@ -8,27 +7,49 @@ class Announcement extends Component {
     constructor(){
         super();
         this.state={
-          convocatoria:[]
+          convocatoria:[],
+          requisitos:[]
         };
 
     }
 
     componentDidMount(){
-        axios.get('http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/announcements/2')
-      .then(res=>{  
+        axios.get('http://ec2-3-86-217-133.compute-1.amazonaws.com:3000/announcements/'+(this.props.match.params.idh))
+      .then(res=>{    
         this.setState({
-          convocatoria:res.data
+          convocatoria:res.data,
+          requisitos:res.data.requirements
         })
+        
       })
     }
 
+    
+
     render(){
-        
-        return(
-            <div className="container">
+
+        const   requisitos=this.state.requisitos
+
+        const recorrer = requisitos.map(r => {
+            return(
                 
-              <h4 className="center">Informacion</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda totam iste minus neque dicta! Commodi distinctio, dolor delectus rerum quia ut enim soluta sint, aspernatur cum omnis nihil ad est?</p>
+                    <li className="waves-effect" key={r} >
+                         {r.description}   <br/>
+                    </li> 
+            );
+        });
+
+        return(
+            <div className="container" >
+                
+              <h4 className="center">{this.state.convocatoria.name} </h4><br/>
+              <b>Vacantes: </b> {this.state.convocatoria.vacant}<br/>
+              <b>Descripcion: </b> {this.state.convocatoria.description}<br/>
+              <b>Requisitos: </b><br/><br/>
+              <ul>{recorrer}</ul>
+              
+              
+              
             </div>
           );
     }

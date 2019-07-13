@@ -24,11 +24,6 @@ const Form =()=> {
               <option value="2">Universidad de los Andes</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <div className="row">
@@ -40,11 +35,6 @@ const Form =()=> {
               <option value="3">Opcion 3</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <div className="row">
@@ -56,11 +46,6 @@ const Form =()=> {
               <option value="3">Opcion 3</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <div className="row">
@@ -72,11 +57,6 @@ const Form =()=> {
               <option value="3">Opcion 3</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
         
         <Input name="P.A.P.A" description="Hola"/>
@@ -95,11 +75,6 @@ const Form =()=> {
               <option value="3">Opcion 3</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <div className="row">
@@ -114,11 +89,6 @@ const Form =()=> {
               <span htmlFor="No">No</span>
             </label>
           </div>
-            <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-            </div>
         </div>
 
         <div className="row">
@@ -130,11 +100,6 @@ const Form =()=> {
               <option value="3">Opcion 3</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <Input name="City" description="Hola"/>
@@ -156,11 +121,6 @@ const Form =()=> {
               <option value="3">Opcion 3</option>
             </select>
           </div> 
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <div className="row">
@@ -170,12 +130,6 @@ const Form =()=> {
               <span>Extended </span>
               
             </label>
-          </div> 
-
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
           </div>
         </div>
         
@@ -188,22 +142,12 @@ const Form =()=> {
             <input type="text" className="datepicker"></input>
             <label htmlFor="Start Date">Start Date</label>  
           </div>
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
-          </div>
         </div>
 
         <div className="row">
           <div className="input-field  col s6">
             <input type="text" className="datepicker"></input>
             <label htmlFor="End Date">End Date</label>  
-          </div>
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
           </div>
         </div>
 
@@ -220,12 +164,6 @@ const Form =()=> {
             <div className="file-path-wrapper">
               <input className="file-path validate" type="text"></input>
             </div>
-          </div>
-
-          <div className="col s6">
-            <a className="btn tooltipped " data-position="right" data-tooltip="Adios"> 
-              <i className="material-icons">help</i>
-            </a>
           </div>
           
         </div>
