@@ -1,5 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Login from './Login';
 
 const Navbar =()=> {
   return(
@@ -16,6 +17,7 @@ const Navbar =()=> {
                 <li><Link to='/Annouadmin'>Procesos admin</Link></li>
                 <li><Link to='/Process'>Buscar proceso</Link></li>
                 <li><Link to='/Login'>Login</Link></li>
+                <li><Login></Login></li>
               </ul>
           </div>
       </nav>
