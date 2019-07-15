@@ -1,16 +1,18 @@
 import React,{Component} from "react";
 import axios from 'axios';
 import { Redirect  } from "react-router-dom";
+import { Link } from "fs";
+
 
 
 class Announcement extends Component {
 
     constructor(){
         super();
-        this.redirectTo= "";
         this.state={
           convocatoria:[],
-          requisitos:[]
+          requisitos:[],
+          redirect:false
         };
         this.aplicar = this.aplicar.bind(this);
         this.checkLogued = this.checkLogued.bind(this);
@@ -31,7 +33,10 @@ class Announcement extends Component {
     aplicar(){
       let log = this.checkLogued();
       if (log){
-        this.setRedirect("formulario");
+        this.setState({
+          redirect: true
+        })
+        
       }else{
         alert("Debe autenticarse antes de aplicar a alguna convocatoria");
       }
@@ -44,19 +49,18 @@ class Announcement extends Component {
       }
       return loged;
     }
-    setRedirect(path){
-      this.redirectTo=path;
-  }
+   
 
     render(){
 
       // redirection code
-      if(this.redirectTo==="formulario"){
-        return <Redirect to='/form' ></Redirect>
-      }
-      
 
-     
+      const { redirect } = this.state;
+
+      if (redirect) {
+        return <Redirect to='/form'/>;
+      }
+
         const   requisitos=this.state.requisitos
         let  cont=0
         const recorrer = requisitos.map(r => {
