@@ -14,7 +14,8 @@ export default class Login extends React.Component {
                 firstName:"",
                 lastName:"",
                 email:"",
-                imageURL:""
+                imageURL:"",
+                role: ""
             }
         }
         this.responseGoogle = this.responseGoogle.bind(this);
@@ -31,7 +32,7 @@ export default class Login extends React.Component {
             this.setState({
               clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
               isLogued:true,
-              user:sessionData
+              user: sessionData
             });
         }
     }
@@ -51,7 +52,8 @@ export default class Login extends React.Component {
                 firstName:res.profileObj.givenName,
                 lastName:res.profileObj.familyName,
                 email:res.profileObj.email,
-                imageURL:res.profileObj.imageUrl
+                imageURL:res.profileObj.imageUrl,
+                token: res.tokenId
             }
         });
         let token = res.tokenId;
