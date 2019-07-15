@@ -12,14 +12,13 @@ class Dropdown extends Component {
 
   render(){
     return(
-      <div className="container">
+      <div >
 
         <a className='dropdown-trigger btn grey darken-3'  data-target={this.props.data}>{this.props.name}</a>
 
           <ul id={this.props.data} className='dropdown-content '>
             <li><Link to={"/"+ this.props.first}>{this.props.first}</Link></li>
             <li><Link to={"/"+ this.props.second}>{this.props.second}</Link></li>
-            <li><Link to={"/"+ this.props.third}>{this.props.third}</Link></li>
           </ul>
       </div>
     );

@@ -14,7 +14,8 @@ export default class Login extends React.Component {
                 firstName:"",
                 lastName:"",
                 email:"",
-                imageURL:""
+                imageURL:"",
+                role: ""
             }
         }
         this.responseGoogle = this.responseGoogle.bind(this);
@@ -29,9 +30,9 @@ export default class Login extends React.Component {
         let sessionData = JSON.parse(sessionStorage.getItem("movilidadUser"));
         if(sessionData != null){
             this.setState({
-              clientId:"319707422487-tag1nov8ucvqn3gsdeka6md51rek3pk2.apps.googleusercontent.com",
+              clientId:"331350514407-s7lkqidvng629hv05efpqhidvrcqev3m.apps.googleusercontent.com",
               isLogued:true,
-              user:sessionData
+              user: sessionData
             });
         }
     }
@@ -45,16 +46,25 @@ export default class Login extends React.Component {
     }
 
     responseGoogle(res){
-        console.log(res);
         this.setState({
             isLogued:true,
             user:{
                 firstName:res.profileObj.givenName,
                 lastName:res.profileObj.familyName,
                 email:res.profileObj.email,
-                imageURL:res.profileObj.imageUrl
+                imageURL:res.profileObj.imageUrl,
+                token: res.tokenId
             }
         });
+        let token = res.tokenId;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/users');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('googleToken', token);
+        xhr.onload = function() {
+          console.log(xhr.response);
+        };
+        xhr.send();
         sessionStorage.setItem("movilidadUser",JSON.stringify(this.state.user));
     }
 
@@ -70,15 +80,7 @@ export default class Login extends React.Component {
         //Enviar información al servidor
         var id_token = googleUser.getAuthResponse().id_token;
         console.log(id_token);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:3000');
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function() {
-          console.log(xhr.responseText);
-        };
-        let req = {};
-        req.id_token = id_token;
-        xhr.send(JSON.stringify(req));
+        
     }
 
     render(){
@@ -100,8 +102,6 @@ export default class Login extends React.Component {
                 </div>
                 <div style={{ display: !this.state.isLogued ? 'none' : 'block' }}>
                 <br/>
-                    <h2>Bienvenido <br/>{this.state.user.firstName} {this.state.user.lastName}</h2>
-                    <br/>
                     <a className="waves-effect waves-light btn"  href="/" onClick={this.logOut} >Log out</a>
                 </div>
             </div>

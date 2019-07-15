@@ -1,9 +1,11 @@
 import React,{Component} from 'react';
 import axios from 'axios';
-import prueba from '../assets/prueba.png'
+import {Link} from 'react-router-dom';
+import prueba from '../assets/prueba.png';
 
 
-class Convocatorias extends Component{
+
+class AnnouAdmin extends Component{
   constructor(){
     super();
     this.state={
@@ -16,43 +18,21 @@ class Convocatorias extends Component{
   
   handleClick(e) {
     this.setState({
-      current: Number(e.target.id)
+      current: e.target.id
     });
   }
 
+  /* Con conexion a nube de amazon*/
   componentDidMount(){
-    axios.get('http://localhost:3000/announcements')
+    axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements?nRows=50')
       .then(res=>{
-        console.log(res);
-        
         this.setState({
           convocatorias:res.data
         })
       })
   } 
 
-  /* Con conexion a nube de amazon*/
-  /*componentDidMount(){
-    axios.get('http://52.6.45.175:3000/announcements')
-      .then(res=>{
-        /*console.log(res);
-        
-        this.setState({
-          convocatorias:res.data
-        })
-      })
-  } */
 
-  /*componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/posts/')
-      .then(res=>{
-        this.setState({
-          convocatorias:res.data
-        })
-      })
-  }*/
-
-  //https://jsonplaceholder.typicode.com/posts/
   render(){
     const{convocatorias,current,perPage}=this.state;
 
@@ -75,12 +55,14 @@ class Convocatorias extends Component{
     const convList=convocatorias.length?(
       currentConv.map(convocatoria=>{
         return(
-          <div className="card" key={convocatoria.idAnnouncement}>
+          
+          <div className="card" key={convocatoria.idAnnouncement} id={convocatoria} >
               <div className="card-content row">
                   <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
-                     <div className="section">
+                     <div className="section" >
                      {/*<b>Nombre: </b> <span >{convocatoria.title}</span><br/>*/}
-                      <b>Nombre: </b> <span >{convocatoria.targetUniversityInfo.name}</span><br/>
+                      <b>Nombre: </b> <span >{convocatoria.name}</span><br/>
+                      <b> Id: </b> <span>{convocatoria.idAnnouncement}</span><br></br>
                        <b>Modalidad: </b> <br/>
                        <div className="row">
                          <div className="col s6">
@@ -90,16 +72,24 @@ class Convocatorias extends Component{
                         </div>  
                          </div> 
                        </div>
+                       
+                       {/*<b id={convocatoria.idAnnouncement}  onClick={this.handleClick2} ><Link to={'/Convocatoria'+2}>Aplicar</Link> </b>*/}
+                       
                      </div>
-              </div>
+              </div>   
           </div>
         )
       })
     ):(
       <div className="center">"No hay convocatorias"</div>
     )
+    
     return(
-      <div>
+
+
+      <div className="container">
+          <br/>
+        <button className="mdc-icon-button material-icons"><Link to={'/create'}>add_circle_outline</Link></button>
         <ul>{convList}</ul>
         <div className="center">
           <ul className="pagination">
@@ -114,4 +104,4 @@ class Convocatorias extends Component{
   }
 }
 
-export default Convocatorias;
+export default AnnouAdmin;
