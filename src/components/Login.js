@@ -71,14 +71,12 @@ export default class Login extends React.Component {
         var id_token = googleUser.getAuthResponse().id_token;
         console.log(id_token);
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:3000');
+        xhr.open('POST', 'http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/user');
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function() {
-          console.log(xhr.responseText);
+          console.log(xhr.role);
         };
-        let req = {};
-        req.id_token = id_token;
-        xhr.send(JSON.stringify(req));
+        xhr.setRequestHeader('googleToken', id_token);
     }
 
     render(){
