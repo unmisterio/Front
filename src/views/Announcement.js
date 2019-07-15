@@ -1,17 +1,19 @@
 import React,{Component} from "react";
 import axios from 'axios';
+import { Redirect  } from "react-router-dom";
 
 
 class Announcement extends Component {
 
     constructor(){
         super();
+        this.redirectTo= "";
         this.state={
           convocatoria:[],
           requisitos:[]
         };
-
-    }
+        this.aplicar = this.aplicar.bind(this);
+     }
 
     componentDidMount(){
         axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements/'+(this.props.match.params.idh))
@@ -25,13 +27,29 @@ class Announcement extends Component {
         
       })
     }
+    aplicar(){
+      let log = checkLogued();
+      if (log){
+        this.setRedirect("formulario");
+      }else{
+        alert("Debe autenticarse antes de aplicar a alguna convocatoria");
+      }
+    }
 
-    
+    setRedirect(path){
+      this.redirectTo=path;
+  }
 
     render(){
 
-        const   requisitos=this.state.requisitos
+      // redirection code
+      if(this.redirectTo==="formulario"){
+        return <Redirect to='/form' ></Redirect>
+      }
+      
 
+      //handle image...
+        const   requisitos=this.state.requisitos
         const recorrer = requisitos.map(r => {
             return(
                 
@@ -50,6 +68,7 @@ class Announcement extends Component {
         
         
         return(
+          
             <div className="container" >
                 
               <h4 className="center">{this.state.convocatoria.name} </h4><br/>
@@ -64,7 +83,7 @@ class Announcement extends Component {
               
               {/*<img src="image.src" alt="Girl in a jacket"/>*/}
              
-             <button className="grey darken-3" > Aplicar </button>
+             <button className="grey darken-3" onClick={this.aplicar} > Aplicar </button>
 
             </div>
           );

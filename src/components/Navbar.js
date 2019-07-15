@@ -11,7 +11,7 @@ const Navbar =()=> {
                 {/*<li><Link to='/test'>Pruebas</Link></li>*/}
                 <li><Link to='/'>Home</Link></li>
                 {/*<li><Link to='/info'>Informacion</Link></li>*/}
-                <li><Link to='/form'>Formulario</Link></li>
+                {/*<li><Link to='/form'>Formulario</Link></li>*/}
                 <li><Link to='/role'>Asignar rol</Link></li>
                 <li><Link to='/Mymobility'>Mis  procesos</Link></li>
                 <li><Link to='/Annouadmin'>Procesos admin</Link></li>
