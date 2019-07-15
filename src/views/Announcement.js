@@ -36,7 +36,7 @@ class Announcement extends Component {
       }
     }
     checkLogued(){
-      loged = false;
+      let loged = false;
       let sessionData = JSON.parse(sessionStorage.getItem("movilidadUser"));
       if(sessionData != null){
           loged = true;
