@@ -56,7 +56,7 @@ export default class Login extends React.Component {
         });
         let token = res.tokenId;
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/user');
+        xhr.open('GET', 'http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/users');
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('googleToken', token);
         xhr.onload = function() {
