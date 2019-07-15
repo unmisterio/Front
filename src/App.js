@@ -2,7 +2,6 @@ import React from 'react';
 import TestBPMN from './views/TestBPMN.js';
 import Info from './components/Info';
 import Navbar from "./components/Navbar";
-import ConvEst from "./components/ConvEst";
 import Home from "./components/Home";
 import Botones from './components/Botones';
 import Form from './components/Form';
@@ -15,6 +14,7 @@ import Announcement from './views/Announcement.js';
 import Mymobility from './views/Mymobility.js';
 import AnnouAdmin from './views/AnnouAdmin';
 import SearchProcess from './views/SearchProcess.js';
+import Login from './components/Login'
 
 
 
@@ -39,7 +39,6 @@ export default class App extends React.Component {
               <Route path="/camunda" component={TestBPMN} />
               <Route path="/info" component={Info} />
               <Route path="/test" component={Botones} />
-              <Route path="/estudiante" component={ConvEst} />
               <Route path="/Aprobar" component={Info} />
               <Route path="/Devolver" component={Info} />
               <Route path="/Rechazar" component={Info} />
@@ -53,6 +52,7 @@ export default class App extends React.Component {
               <Route path="/Mymobility" component={Mymobility}  />
               <Route path="/Annouadmin" component={AnnouAdmin}  />
               <Route path="/Process" component={SearchProcess}  />
+              <Route path="/Login" component={Login}  />
 
             </Switch>
 

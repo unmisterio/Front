@@ -67,17 +67,16 @@ class Create extends React.Component {
      
                 <form onSubmit={this.handleSubmit}>
 
-                    <Input name="ID" description="Blablabla" id="idAnnouncement" handle={this.handleChange}/>
-                    <Input name="Nombre" description="Blablabla" id="name" handle={this.handleChange}/>
-                    <Input name="Descripcion" description="Blablabla" id="description" handle={this.handleChange}/>
-                    <Input name="Vacantes" description="Blablabla" id="vacant" handle={this.handleChange}/>
-                    <Input name="Fecha apertura" description="Blablabla" id="releaseDate" handle={this.handleChange}/>
-                    <Input name="Fecha cierra" description="Blablabla" id="closureDate" handle={this.handleChange}/>
-                    <Input name="Fecha limite" description="Blablabla" id="limitDate" handle={this.handleChange}/>
-                    <Input name="Id de universidad" description="Blablabla" id="idTargetUniversity" handle={this.handleChange}/>
-                    <Input name="Estado" description="Blablabla" id="state" handle={this.handleChange}/>
-                    <Input name="Requisito" description="Blablabla" id="name2" handle={this.handleChange}/>
-                    <Input name="Descripcion" description="Blablabla" id="description2" handle={this.handleChange}/>
+                    <Input name="Nombre"  id="name" handle={this.handleChange}/>
+                    <Input name="Descripcion"  id="description" handle={this.handleChange}/>
+                    <Input name="Vacantes"  id="vacant" handle={this.handleChange}/>
+                    <Input name="Fecha apertura"  id="releaseDate" handle={this.handleChange}/>
+                    <Input name="Fecha cierra"  id="closureDate" handle={this.handleChange}/>
+                    <Input name="Fecha limite"  id="limitDate" handle={this.handleChange}/>
+                    <Input name="Id de universidad"  id="idTargetUniversity" handle={this.handleChange}/>
+                    <Input name="Estado"  id="state" handle={this.handleChange}/>
+                    <Input name="Requisito"  id="name2" handle={this.handleChange}/>
+                    <Input name="Descripcion"  id="description2" handle={this.handleChange}/>
 
                   
                     <button type="submit" className="btn grey darken-3">Crear</button>
