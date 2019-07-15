@@ -23,6 +23,7 @@ class Announcements extends Component{
 
   /* Con conexion a nube de amazon*/
   componentDidMount(){
+    this._isMounted = true;
     axios.get('http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/announcements?nRows=50')
       .then(res=>{
        

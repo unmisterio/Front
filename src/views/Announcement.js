@@ -56,16 +56,21 @@ class Announcement extends Component {
       }
       
 
-      //handle image...
+     
         const   requisitos=this.state.requisitos
+        let  cont=0
         const recorrer = requisitos.map(r => {
-            return(
+          
+          return(
                 
-                    <li className="waves-effect" key={r} >
+                    <li className="waves-effect" key={r.idRequirement}>
                          {r.description}   <br/>
+                         
+                         
                     </li> 
             );
         });
+         //handle image...
 
         {/*var buff =  this.state.convocatoria.image
         var el = document.createElemrnt('img')
@@ -90,8 +95,10 @@ class Announcement extends Component {
              
               
               {/*<img src="image.src" alt="Girl in a jacket"/>*/}
+             <div className="center">
+              <button className="btn grey darken-3" onClick={this.aplicar} > Aplicar </button>
+             </div>
              
-             <button className="grey darken-3" onClick={this.aplicar} > Aplicar </button>
 
             </div>
           );

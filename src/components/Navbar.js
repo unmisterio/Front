@@ -16,7 +16,6 @@ const Navbar =()=> {
                 <li><Link to='/Mymobility'>Mis  procesos</Link></li>
                 <li><Link to='/Annouadmin'>Procesos admin</Link></li>
                 <li><Link to='/Process'>Buscar proceso</Link></li>
-                <li><Link to='/Login'>Login</Link></li>
                 <li><Login></Login></li>
               </ul>
           </div>
