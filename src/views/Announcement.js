@@ -63,11 +63,9 @@ class Announcement extends Component {
              
               
               {/*<img src="image.src" alt="Girl in a jacket"/>*/}
+             
+             <button className="grey darken-3" > Aplicar </button>
 
-              
-              
-              
-              
             </div>
           );
     }
