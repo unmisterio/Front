@@ -35,7 +35,14 @@ class Announcement extends Component {
         alert("Debe autenticarse antes de aplicar a alguna convocatoria");
       }
     }
-
+    checkLogued(){
+      loged = false;
+      let sessionData = JSON.parse(sessionStorage.getItem("movilidadUser"));
+      if(sessionData != null){
+          loged = true;
+      }
+      return loged;
+    }
     setRedirect(path){
       this.redirectTo=path;
   }
