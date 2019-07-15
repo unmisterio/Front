@@ -13,6 +13,7 @@ class Announcement extends Component {
           requisitos:[]
         };
         this.aplicar = this.aplicar.bind(this);
+        this.checkLogued = this.checkLogued.bind(this);
      }
 
     componentDidMount(){
@@ -28,7 +29,7 @@ class Announcement extends Component {
       })
     }
     aplicar(){
-      let log = checkLogued();
+      let log = this.checkLogued();
       if (log){
         this.setRedirect("formulario");
       }else{
