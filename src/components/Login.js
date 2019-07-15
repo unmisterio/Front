@@ -102,8 +102,6 @@ export default class Login extends React.Component {
                 </div>
                 <div style={{ display: !this.state.isLogued ? 'none' : 'block' }}>
                 <br/>
-                    <h2>Bienvenido <br/>{this.state.user.firstName} {this.state.user.lastName}</h2>
-                    <br/>
                     <a className="waves-effect waves-light btn"  href="/" onClick={this.logOut} >Log out</a>
                 </div>
             </div>
