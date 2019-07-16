@@ -1,0 +1,22 @@
+{
+    "campus":[
+        {
+            "name":"Sede Bogotá",
+            "id":"bogotá"
+        },
+        {
+            "name":"Sede Medellin",
+            "id":"Medellin"
+        },
+        {
+            "name":"Sede Orinoquía",
+            "id":"orinoquía"
+        },
+        {
+            "name":"Sede Manizales",
+            "id":"Manizales"
+        }
+    ],
+    "faculty":[],
+    "CurricularProgram":[]
+}

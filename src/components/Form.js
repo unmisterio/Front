@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import Basic from './BasicForm'
 import axios from 'axios';
 import Input from './Input'
+import listData from './dataList.json';
 
 class Form extends Component {
 
@@ -35,6 +36,8 @@ class Form extends Component {
       target_faculty:null,
       target_curricular_program:null,
     };
+
+    this.dataList = listData;
     {/*this.handleClick=this.handleClick.bind(this);*/}
   }
   
@@ -92,8 +95,7 @@ class Form extends Component {
   }
 
   render(){
-
-
+    let ls = [{name:"hola",id:"lalalalal"},{name:"chao",id:"sncajkncsa"}];
     return(
       <div className="container">
         <form onSubmit={this.handleSubmit}>
@@ -122,9 +124,9 @@ class Form extends Component {
           <div className="row">
             <div className="col s6">
               <select>
-                <option value="" disabled select>Institution of Origin</option>
-                <option value="1">Universidad Nacional de Colombia</option>
-                <option value="2">Universidad de los Andes</option>
+                <option value="a" disabled select>Institution of Origin</option>
+                <option value="b">Universidad Nacional de Colombia</option>
+                <option value="c">Universidad de los Andes</option>
               </select>
             </div> 
           </div>
@@ -132,10 +134,11 @@ class Form extends Component {
           <div className="row">
             <div className="col s6">
               <select>
-                <option value="" disabled select>Campus</option>
-                <option value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-                <option value="3">Opcion 3</option>
+                <option value="a" disabled select>Campus</option>
+                {this.dataList.campus.map((item,index)=>{
+                    return (<option value={item.id} > {item.name} </option>)
+                  }
+                )}
               </select>
             </div> 
           </div>
@@ -143,10 +146,10 @@ class Form extends Component {
           <div className="row">
             <div className="col s6">
               <select>
-                <option value="" disabled select>Faculty</option>
-                <option value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-                <option value="3">Opcion 3</option>
+                <option value="a" disabled select>Faculty</option>
+                <option value="b">Opcion 1</option>
+                <option value="c">Opcion 2</option>
+                <option value="d">Opcion 3</option>
               </select>
             </div> 
           </div>
@@ -154,10 +157,10 @@ class Form extends Component {
           <div className="row">
             <div className="col s6">
               <select>
-                <option value="" disabled select>Curricular program</option>
-                <option value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-                <option value="3">Opcion 3</option>
+                <option value="a" disabled select>Curricular program</option>
+                <option value="b">Opcion 1</option>
+                <option value="c">Opcion 2</option>
+                <option value="d">Opcion 3</option>
               </select>
             </div> 
           </div>
@@ -172,10 +175,10 @@ class Form extends Component {
           <div className="row">
             <div className="col s6">
               <select>
-                <option value="" disabled select>Institution</option>
-                <option value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-                <option value="3">Opcion 3</option>
+                <option value="a" disabled select>Institution</option>
+                <option value="b">Opcion 1</option>
+                <option value="c">Opcion 2</option>
+                <option value="d">Opcion 3</option>
               </select>
             </div> 
           </div>
@@ -197,10 +200,10 @@ class Form extends Component {
           <div className="row">
             <div className="col s6">
               <select>
-                <option value="" disabled select>Country</option>
-                <option value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-                <option value="3">Opcion 3</option>
+                <option value="a" disabled select>Country</option>
+                <option value="b">Opcion 1</option>
+                <option value="c">Opcion 2</option>
+                <option value="d">Opcion 3</option>
               </select>
             </div> 
           </div>
