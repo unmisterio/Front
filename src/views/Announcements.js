@@ -59,7 +59,9 @@ class Announcements extends Component{
           
           <div className="card" key={convocatoria.idAnnouncement} id={convocatoria} >
               <div className="card-content row">
-                  <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
+                  <div className="col s3"><img src={convocatoria.state} alt="" width='90%'/></div>
+                     {console.log(convocatoria.state)
+                     }
                      <div className="section" >
                      {/*<b>Nombre: </b> <span >{convocatoria.title}</span><br/>*/}
                       <b>Nombre: </b> <span >{convocatoria.name}</span><br/>
