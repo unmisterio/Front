@@ -2,14 +2,13 @@ import React,{Component} from "react";
 import Basic from './BasicForm'
 import axios from 'axios';
 import Input from './Input'
-import listData from './dataList.json';
+import listData from '../data/dataList.json';
 
 class Form extends Component {
 
   constructor(){
     super();
     this.state={
-      document_number:null,
       document_type:null,
       document_number:null,
       birth_place:null,
@@ -60,7 +59,7 @@ class Form extends Component {
       emergency_contact_relationship:this.state.emergency_contact_relationship,
       emergency_contact_email:this.state.emergency_contact_email
     }
-
+    
     let mobility ={
       idAnnouncement:this.state.idAnnouncement,
       un_location:this.state.un_location,
@@ -75,13 +74,17 @@ class Form extends Component {
       target_curricular_program:this.state.target_curricular_program,
     }
 
-    axios.put("http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/users?user=15 ",user)
+    
+    axios.put("http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/users?user=29 ",user)
+  
       .then(res => {
         console.log(res);
         console.log(res.data);
       })
     
-      axios.post("http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/mobilityProcesses?user=15 ",mobility)
+      console.log(mobility)
+      axios.post("http://ec2-52-207-246-227.compute-1.amazonaws.com:3000/mobilityProcesses?user=29 ",mobility)
+    
       .then(res2 => {
         console.log(res2);
         console.log(res2.data);
@@ -94,187 +97,94 @@ class Form extends Component {
     });
   }
 
+  onChange=(e)=>{
+    this.setState({
+      un_location:e.target.value
+    })
+  }
+
+  onChange2=(e)=>{
+    this.setState({
+      un_faculty:e.target.value
+    })
+  }
+
+  onChange3=(e)=>{
+    this.setState({
+      un_curricular_program:e.target.value
+    })
+  }
   render(){
-    let ls = [{name:"hola",id:"lalalalal"},{name:"chao",id:"sncajkncsa"}];
     return(
       <div className="container">
         <form onSubmit={this.handleSubmit}>
         <h1> Movilidad </h1>
       <h2>Personal Data</h2>
       {/*<Input name="Full Name" />*/}
-      <Input name="Type of Document" id="name" handle={this.handleChange}/>
-      <Input name="ID Number" />
-      <Input name="Date of  Birth" />
-      <Input name="Birth Place" />
-      <Input name="Gender"/>
-      <Input name="Email" />
-      <Input name="Residential Address" />
-      <Input name="City" />
-      <Input name="Phone" />
-      <Input name="Mobile" />
+      <Input name="Type of Document" id="document_type" handle={this.handleChange}/>
+      <Input name="ID Number" id="document_number" handle={this.handleChange}/>
+      <Input name="Birth Place" id="birth_place" handle={this.handleChange}/>
+      <Input name="Gender" id="gender" handle={this.handleChange}/>
+      <Input name="Residential Address" id="address" handle={this.handleChange}/>
+      <Input name="City" id="city" handle={this.handleChange}/>
+      <Input name="Phone" id="phone" handle={this.handleChange}/>
+      <Input name="Mobile" id="cellphone" handle={this.handleChange}/>
           <h2>Contact person in case of emergency</h2>
-          <Input name="Name of the contact person" />
-          <Input name="Kinship" />
-          <Input name="Phone"  />
-          <Input name="Mobile"  />
-          <Input name="E-mail" />
+          <Input name="Name of the contact person" id="emergency_contact_name" handle={this.handleChange} />
+          <Input name="Kinship" id="emergency_contact_relationship" handle={this.handleChange}/>
+          <Input name="Phone" id="emergency_contact_phone" handle={this.handleChange} />
+          <Input name="E-mail" id="emergency_contact_email" handle={this.handleChange}/>
   
           <h2>Academic Information</h2>
   
+  <Input name="Announcement" id="idAnnouncement" handle={this.handleChange}/>
+
           <div className="row">
             <div className="col s6">
-              <select>
-                <option value="a" disabled select>Institution of Origin</option>
-                <option value="b">Universidad Nacional de Colombia</option>
-                <option value="c">Universidad de los Andes</option>
-              </select>
-            </div> 
-          </div>
-  
-          <div className="row">
-            <div className="col s6">
-              <select>
+              <select onChange={this.onChange}>
                 <option value="a" disabled select>Campus</option>
                 {this.dataList.campus.map((item,index)=>{
-                    return (<option value={item.id} > {item.name} </option>)
+                    return (<option value={item.id} key={item.id} > {item.name} </option>)
                   }
                 )}
               </select>
             </div> 
-          </div>
-  
-          <div className="row">
+                </div>
+
+                <div className="row">
             <div className="col s6">
-              <select>
+              <select onChange={this.onChange2}>
                 <option value="a" disabled select>Faculty</option>
-                <option value="b">Opcion 1</option>
-                <option value="c">Opcion 2</option>
-                <option value="d">Opcion 3</option>
+                {this.dataList.faculty.map((item,index)=>{
+                    return (<option value={item.id} key={item.id} > {item.name} </option>)
+                  }
+                )}
               </select>
             </div> 
-          </div>
-  
-          <div className="row">
+                </div>
+
+                <div className="row">
             <div className="col s6">
-              <select>
-                <option value="a" disabled select>Curricular program</option>
-                <option value="b">Opcion 1</option>
-                <option value="c">Opcion 2</option>
-                <option value="d">Opcion 3</option>
+              <select onChange={this.onChange3}>
+                <option value="a" disabled select>Program</option>
+                {this.dataList.program.map((item,index)=>{
+                    return (<option value={item.id} key={item.id} > {item.name} </option>)
+                  }
+                )}
               </select>
             </div> 
-          </div>
-          
-          <Input name="P.A.P.A" />
-          <Input name="Director or Curricular Coordinator" />
-          <Input name="Phone of the Coordinator" />
-          <Input name="Email of the Coordinato" />
+                </div>
+          <Input name="P.A.P.A" id="papa" handle={this.handleChange} />
+          <Input name=" Curricular Coordinator" id="un_curricular_coordinator_name" handle={this.handleChange}/>
+          <Input name="Phone of the Coordinator" id="un_curricular_coordinator_phone" handle={this.handleChange}/>
+          <Input name="Email of the Coordinator" id="un_curricular_coordinator_email" handle={this.handleChange}/>
   
           <h2>Information on Institution of Destination</h2>
   
-          <div className="row">
-            <div className="col s6">
-              <select>
-                <option value="a" disabled select>Institution</option>
-                <option value="b">Opcion 1</option>
-                <option value="c">Opcion 2</option>
-                <option value="d">Opcion 3</option>
-              </select>
-            </div> 
-          </div>
-  
-          <div className="row">
-            <div className="col s6">
-              <label>Belongs to a Call:</label>
-              <label>
-                <input className="with-gap" name="group3" type="radio" id="Yes" />
-                <span htmlFor="Yes">Yes</span>
-              </label>
-              <label>
-                <input className="with-gap" name="group3" type="radio" id="No"/>
-                <span htmlFor="No">No</span>
-              </label>
-            </div>
-          </div>
-  
-          <div className="row">
-            <div className="col s6">
-              <select>
-                <option value="a" disabled select>Country</option>
-                <option value="b">Opcion 1</option>
-                <option value="c">Opcion 2</option>
-                <option value="d">Opcion 3</option>
-              </select>
-            </div> 
-          </div>
-  
-          <Input name="City" />
-          <Input name="Faculty" />
-          <Input name="Curricular Program" />
-          <Input name="Contact at the Institution" />
-          <Input name="Position at the Institution" />
-          <Input name="Phone of the Contact" />
-          <Input name="Email of the Contact" />
-  
-          <h2>Modality of the Mobility</h2>
-  
-          <div className="row">
-            <div className="col s6">
-              <select>
-                <option value="" disabled select>Modality</option>
-                <option value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-                <option value="3">Opcion 3</option>
-              </select>
-            </div> 
-          </div>
-  
-          <div className="row">
-            <div className="col s6">
-              <label >
-              <input type="checkbox" />
-                <span>Extended </span>
-                
-              </label>
-            </div>
-          </div>
-          
-  
-          <div className="divider"></div>
-          <br/>
-  
-          <div className="row">
-            <div className="input-field  col s6">
-              <input type="text" className="datepicker"></input>
-              <label htmlFor="Start Date">Start Date</label>  
-            </div>
-          </div>
-  
-          <div className="row">
-            <div className="input-field  col s6">
-              <input type="text" className="datepicker"></input>
-              <label htmlFor="End Date">End Date</label>  
-            </div>
-          </div>
-  
-          <Input name="Duration (in months)" />
-  
-          <h2>Documents</h2>
-  
-          <div className="file-field input-field row">
-            <div className="col s6">
-              <div className="btn">
-                <span>File</span>
-                <input type="file"></input>
-              </div>
-              <div className="file-path-wrapper">
-                <input className="file-path validate" type="text"></input>
-              </div>
-            </div>
-            
-          </div>
-  
-          <br/>
+          <Input name="City" id="target_city" handle={this.handleChange} />
+          <Input name="Faculty" id="target_faculty" handle={this.handleChange}/>
+          <Input name="Program" id="target_curricular_program" handle={this.handleChange}/>
+     
           <div className="row">
             <div className="col push-s6">
               <button type="submit" className="btn grey darken-3">Enviar</button>

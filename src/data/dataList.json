@@ -1,0 +1,56 @@
+{
+    "campus":[
+        {
+            "name":"Sede Bogotá",
+            "id":"bogotá"
+        },
+        {
+            "name":"Sede Medellin",
+            "id":"Medellin"
+        },
+        {
+            "name":"Sede Orinoquía",
+            "id":"orinoquía"
+        },
+        {
+            "name":"Sede Manizales",
+            "id":"Manizales"
+        }
+    ],
+    "faculty":[
+        {
+            "name":"Ingenieria",
+            "id":"Ingenieria"
+        },
+        {
+            "name":"Ciencias Humanas",
+            "id":"Humanas"
+        },
+        {
+            "name":"Medicina",
+            "id":"Medicina"
+        },
+        {
+            "name":"Ciencias Exactas",
+            "id":"Matematicas"
+        }
+    ],
+    "program":[
+        {
+            "name":"Matematicas",
+            "id":"Matematicas"
+        },
+        {
+            "name":"Ingenieria de Sistemas",
+            "id":"Sistemas"
+        },
+        {
+            "name":"Medicina",
+            "id":"Medicina"
+        },
+        {
+            "name":"Psicologia",
+            "id":"Psicologia"
+        }
+    ]
+}
