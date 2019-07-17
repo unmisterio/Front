@@ -15,7 +15,7 @@ class AnnouAdmin extends Component{
     };
     this.handleClick=this.handleClick.bind(this);
   }
-  
+
   handleClick(e) {
     this.setState({
       current: e.target.id
@@ -30,7 +30,7 @@ class AnnouAdmin extends Component{
           convocatorias:res.data
         })
       })
-  } 
+  }
 
 
   render(){
@@ -48,17 +48,17 @@ class AnnouAdmin extends Component{
       return (
        <li className="waves-effect"  key={number}>
             <a id={number} onClick={this.handleClick}>{number}</a>
-        </li> 
+        </li>
       );
     });
 
     const convList=convocatorias.length?(
       currentConv.map(convocatoria=>{
         return(
-          
+
           <div className="card" key={convocatoria.idAnnouncement} id={convocatoria} >
               <div className="card-content row">
-                  <div className="col s3"><img src={prueba} alt="" width='90%'/></div>
+                  <div className="col s3"><img src={convocatoria.state} alt="" width='90%'/></div>
                      <div className="section" >
                      {/*<b>Nombre: </b> <span >{convocatoria.title}</span><br/>*/}
                       <b>Nombre: </b> <span >{convocatoria.name}</span><br/>
@@ -69,21 +69,21 @@ class AnnouAdmin extends Component{
                             <b>Vacantes: </b> <span >{convocatoria.vacant}</span>
                         <div className="col">
                             <b>Aplicantes: </b> <br/>
-                        </div>  
-                         </div> 
+                        </div>
+                         </div>
                        </div>
-                       
+
                        {/*<b id={convocatoria.idAnnouncement}  onClick={this.handleClick2} ><Link to={'/Convocatoria'+2}>Aplicar</Link> </b>*/}
-                       
+
                      </div>
-              </div>   
+              </div>
           </div>
         )
       })
     ):(
       <div className="center">"No hay convocatorias"</div>
     )
-    
+
     return(
 
 
@@ -96,9 +96,9 @@ class AnnouAdmin extends Component{
             <li className="disabled"><a href="#!"><i className="material-icons">chevron_left</i></a></li>
             {renderPageNumbers}
             <li className="waves-effect"><a href="#!"><i className="material-icons">chevron_right</i></a></li>
-          </ul> 
+          </ul>
         </div>
-        
+
       </div>
     )
   }
